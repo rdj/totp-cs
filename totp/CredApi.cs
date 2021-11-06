@@ -42,7 +42,7 @@ namespace totp
         [DllImport("advapi32.dll", SetLastError = true)]
         static extern bool CredFree([In] IntPtr buffer);
 
-        internal static string getPassword(string serviceName)
+        internal static string GetPassword(string serviceName)
         {
             IntPtr pCred = IntPtr.Zero;
             try {

@@ -28,7 +28,7 @@ namespace totp
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             var elapsedSeconds = DateTime.UtcNow.Subtract(epoch).TotalSeconds;
             var counter = (long)elapsedSeconds / 30;
-            var keyString = CredApi.getPassword("ffxiv-totp");
+            var keyString = CredApi.GetPassword("ffxiv-totp");
             var key = HexStringToBytes(keyString);
             var counterBytesBE = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(counter));
             var hmac = new HMACSHA1(key).ComputeHash(counterBytesBE);
